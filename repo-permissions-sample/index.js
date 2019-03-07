@@ -1,9 +1,9 @@
 const request =  require('request');
 const vsoNodeApi = require('azure-devops-node-api');
 // Create a personal from azure devops
-const token = "qgj5mzmhlanmkautlf2kcoswt36mmlh44zke4kgozlwvbgbt4mia";
+const token = "<INSERT TOKEN>";
 // Url to your organization
-const serverUrl = 'https://dev.azure.com/simerzou0646/'; 
+const serverUrl = '<INSERT REPO URL>'; 
 let authHandler = vsoNodeApi.getPersonalAccessTokenHandler(token); 
 let vsts = new vsoNodeApi.WebApi(serverUrl, authHandler, undefined);
 
@@ -38,13 +38,12 @@ async function run() {
 const constructTeams = async (teams) => {
   const obj = {}
   var coreApi = await vsts.getCoreApi(); 
-  const securityApi = await vsts.getSecurityRolesApi()
   const ids = Object.keys(teams)
   await asyncForEach(ids, async (key) => {
     await asyncForEach(teams[key], async (el) => {
       const temp = {}
       const {projectId, teamId} = el
-      const url = `https://qgj5mzmhlanmkautlf2kcoswt36mmlh44zke4kgozlwvbgbt4mia@dev.azure.com/simerzou0646/${projectId}/_api/_identity/Display?__v=5&tfid=${teamId}`
+      const url = `https://<INSERT TOKEN>@<INSERT URL>/${projectId}/_api/_identity/Display?__v=5&tfid=${teamId}`
       request.get(url
       , function(error, response, body) {
           const parsedBody = JSON.parse(body)
