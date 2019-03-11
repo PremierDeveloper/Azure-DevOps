@@ -1,6 +1,6 @@
-[#Azure DevOps Permissions
+# Azure DevOps Permissions
 
-directly](# Retrieve Azure DevOps Repo Permissions
+## Retrieve Azure DevOps Repo Permissions 
 
 ### Download or Clone 
 We can either download the repo direclty as shown below or we can clone it
@@ -81,5 +81,3 @@ Org: {
 Brian Blackman </br>
 Sidi Merzouk
 
-
-)
