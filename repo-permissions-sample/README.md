@@ -18,7 +18,7 @@ or
 
 ### Installation & run 
 
-`npm install`
+`npm install` </br>
 `node index.js`
 
 ### Result
