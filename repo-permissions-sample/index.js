@@ -5,12 +5,12 @@ const token = "<INSERT TOKEN>";
 // Url to your organization
 const serverUrl = '<INSERT REPO URL>'; 
 let authHandler = vsoNodeApi.getPersonalAccessTokenHandler(token); 
-let vsts = new vsoNodeApi.WebApi(serverUrl, authHandler, undefined);
+let AzDO = new vsoNodeApi.WebApi(serverUrl, authHandler, undefined);
 
 async function run() {
   var constructedTeams = {}
   try {
-    var coreApi = await vsts.getCoreApi(); 
+    var coreApi = await AzDO.getCoreApi(); 
     var teams = await coreApi.getAllTeams();
     var i;
       for (i = 0; i < teams.length; i++) { 
@@ -37,7 +37,7 @@ async function run() {
 
 const constructTeams = async (teams) => {
   const obj = {}
-  var coreApi = await vsts.getCoreApi(); 
+  var coreApi = await AzDO.getCoreApi(); 
   const ids = Object.keys(teams)
   await asyncForEach(ids, async (key) => {
     await asyncForEach(teams[key], async (el) => {
