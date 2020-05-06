@@ -75,7 +75,7 @@ Org: {
 
 ### Blog Link
 
-<link>coming up soon </link>
+<link>https://devblogs.microsoft.com/premier-developer/using-azure-devops-rest-api-with-node-js-to-retrieve-repo-permissions/</link>
 
 ### Contributors
 Brian Blackman </br>
